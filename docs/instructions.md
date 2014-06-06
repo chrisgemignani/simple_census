@@ -1,5 +1,23 @@
 # Juice pair co-programming project
 
+
+## The repo
+
+Github user is
+
+username: juiceguest
+email: chris+guestadmin@juiceanalytics.com
+password: juicebox1
+
+The repo is: 
+
+git@github.com:chrisgemignani/simple_census.git
+
+https://github.com/chrisgemignani/simple_census
+
+The repo has been cloned out at `~/dev/simple_census`
+
+
 ## Design Brief
 
 Create a webpage that allows users to explore how US population differs between genders for a given state. 
