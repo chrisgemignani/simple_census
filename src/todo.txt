@@ -1,0 +1,4 @@
+read in csv file
+convert it to json
+store in data store (mongo)
+start server #define this later
