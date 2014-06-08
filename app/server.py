@@ -13,7 +13,6 @@ client = MongoClient()
 
 @app.route('/')
 def list():
-    coll = []
     for item in collection.find():
         return dumps(item)
 
