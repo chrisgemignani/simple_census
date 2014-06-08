@@ -12,6 +12,10 @@ app = Flask(__name__)
 client = MongoClient()
 
 @app.route('/')
+def index():
+    return render_template("index.html")
+
+@app.route('/census')
 def list():
     for item in collection.find():
         return dumps(item)
