@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask.ext.cors import cross_origin
 
 from pymongo import MongoClient
 from bson.json_util import dumps
@@ -11,11 +12,8 @@ app = Flask(__name__)
 
 client = MongoClient()
 
-@app.route('/')
-def index():
-    return render_template("index.html")
-
 @app.route('/census')
+@cross_origin()
 def list():
     for item in collection.find():
         return dumps(item)
