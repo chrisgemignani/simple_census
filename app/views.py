@@ -6,8 +6,19 @@ from flask import jsonify
 @app.route('/', methods = ['GET'])
 @app.route('/index', methods = ['GET'])
 def index():
-    return "index placeholder"
+    return render_template("index.html")
 
+@app.route('/data', methods = ['GET', 'POST'])
 @app.route('/data/<state>', methods = ['GET', 'POST'])
-def data(state):
-    return state
+def data(state = None):
+    if state:
+        state_data = [rec.serialize(state.title())
+                      for rec in db.session.\
+                                     query(Census).\
+                                     filter_by(
+                                         state = state.title(),
+                                     )]
+    else:
+        state_data = [rec.serialize()
+                      for rec in db.session.query(Census).all()]
+    return jsonify(result=state_data)
